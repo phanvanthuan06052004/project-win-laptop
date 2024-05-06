@@ -1,0 +1,12 @@
+D:\testDBFirst\laptop_management\DAL\bin\Debug\DAL.dll.config
+D:\testDBFirst\laptop_management\DAL\bin\Debug\DAL.dll
+D:\testDBFirst\laptop_management\DAL\bin\Debug\DAL.pdb
+D:\testDBFirst\laptop_management\DAL\bin\Debug\EntityFramework.dll
+D:\testDBFirst\laptop_management\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\testDBFirst\laptop_management\DAL\bin\Debug\EntityFramework.xml
+D:\testDBFirst\laptop_management\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\testDBFirst\laptop_management\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\testDBFirst\laptop_management\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\testDBFirst\laptop_management\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\testDBFirst\laptop_management\DAL\obj\Debug\DAL.dll
+D:\testDBFirst\laptop_management\DAL\obj\Debug\DAL.pdb
