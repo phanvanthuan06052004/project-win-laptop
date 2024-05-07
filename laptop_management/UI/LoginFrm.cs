@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace UI
 {
     public partial class LoginFrm : Form
     {
+        LoginService loginService;
         public LoginFrm()
         {
             InitializeComponent();
@@ -19,18 +21,43 @@ namespace UI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string PassWord = txtPassword.Text;
-            string UserName = txtUserName.Text;
-            if (UserName == null || UserName.Equals(""))
-            {
-                MessageBox.Show("Chưa nhập Username");
-                return;
-            }
-            if (PassWord == null || PassWord.Equals(""))
-            {
-                MessageBox.Show("Chưa nhập Password");
-                return;
-            }
+           // try
+            //{
+                string PassWord = txtPassword.Text;
+                string UserName = txtUserName.Text;
+                if (string.IsNullOrEmpty(UserName))
+                {
+                    MessageBox.Show("Chưa nhập Username");
+                    return;
+                }
+                if (string.IsNullOrEmpty(PassWord))
+                {
+                    MessageBox.Show("Chưa nhập Password");
+                    return;
+                }
+
+                loginService = new LoginService(); // Tạo một thể hiện của lớp LoginService
+                bool ktr = loginService.checkLogin(UserName, PassWord); // Gọi phương thức checkLogin từ thể hiện đã tạo
+
+                if (ktr)
+                {
+                    ComputerComponentsManagementfrm mainfrm = new ComputerComponentsManagementfrm();
+                    this.Hide();
+                    mainfrm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Sai Username hoặc password, Vui lòng nhập lại!", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPassword.Text = ""; // Xóa trường mật khẩu
+                    txtUserName.Text = ""; // Xóa trường tên đăng nhập
+                }
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //    //MessageBox.Show("Tải dữ liệu không thành công!!!", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
+
     }
 }

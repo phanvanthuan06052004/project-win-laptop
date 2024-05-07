@@ -26,18 +26,18 @@
 
             // Seed NhanViens
             context.nhanViens.AddOrUpdate(
-               new NhanVien { MaNV = "NV000001", HoTen = "Lê Nam", CCCD = "123456789", Role = "Admin" },
+                new NhanVien { MaNV = "NV000001", HoTen = "Lê Nam", CCCD = "123456789", Role = "Admin" },
                 new NhanVien { MaNV = "NV000002", HoTen = "Trần Thị Màu", CCCD = "987654321", Role = "staff" },
                 new NhanVien { MaNV = "NV000003", HoTen = "Nguyễn Minh Đạo", CCCD = "111222333", Role = "staff" },
                 new NhanVien { MaNV = "NV000004", HoTen = "Trần Thị Sơn", CCCD = "444555666", Role = "staff" }
                );
 
             context.taiKhoans.AddOrUpdate(
-      new taiKhoan { Username = "nam", Password = "1234", NhanVienId = "NV000001" },
-            new taiKhoan { Username = "mau", Password = "123", NhanVienId = "NV000002" },
-      new taiKhoan { Username = "dao", Password = "123", NhanVienId = "NV000003" },
-      new taiKhoan { Username = "son", Password = "123", NhanVienId = "NV000004" }
-  );
+                new taiKhoan { Username = "nam", Password = "1234", NhanVienId = "NV000001" },
+                new taiKhoan { Username = "mau", Password = "123", NhanVienId = "NV000002" },
+                new taiKhoan { Username = "dao", Password = "123", NhanVienId = "NV000003" },
+                new taiKhoan { Username = "son", Password = "123", NhanVienId = "NV000004" }
+            );
 
 
 

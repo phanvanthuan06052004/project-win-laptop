@@ -16,3 +16,13 @@ D:\project-win-laptop\laptop_management\UI\obj\Debug\UI.Employeefrm.resources
 D:\project-win-laptop\laptop_management\UI\obj\Debug\UI.OrderDetailFrm.resources
 D:\project-win-laptop\laptop_management\UI\obj\Debug\UI.ProductFrm.resources
 D:\project-win-laptop\laptop_management\UI\obj\Debug\UI.LoginFrm.resources
+D:\project-win-laptop\laptop_management\UI\bin\Debug\DAL.dll
+D:\project-win-laptop\laptop_management\UI\bin\Debug\Service.dll
+D:\project-win-laptop\laptop_management\UI\bin\Debug\EntityFramework.dll
+D:\project-win-laptop\laptop_management\UI\bin\Debug\DAL.pdb
+D:\project-win-laptop\laptop_management\UI\bin\Debug\DAL.dll.config
+D:\project-win-laptop\laptop_management\UI\bin\Debug\Service.pdb
+D:\project-win-laptop\laptop_management\UI\bin\Debug\Service.dll.config
+D:\project-win-laptop\laptop_management\UI\bin\Debug\EntityFramework.xml
+D:\project-win-laptop\laptop_management\UI\bin\Debug\EntityFramework.SqlServer.dll
+D:\project-win-laptop\laptop_management\UI\bin\Debug\EntityFramework.SqlServer.xml

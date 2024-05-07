@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DAL.Entity;
+using Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace UI
 {
     public partial class Employeefrm : Form
     {
+        EmployeeService employee;
         public Employeefrm()
         {
             InitializeComponent();
@@ -19,7 +22,9 @@ namespace UI
 
         private void Employeefrm_Load(object sender, EventArgs e)
         {
-
+            employee = new EmployeeService();
+            dgvEmployee.DataSource = null;
+            dgvEmployee.DataSource = employee.GetAll();
         }
     }
 }
