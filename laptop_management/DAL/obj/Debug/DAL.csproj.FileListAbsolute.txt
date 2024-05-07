@@ -10,3 +10,15 @@ D:\testDBFirst\laptop_management\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cach
 D:\testDBFirst\laptop_management\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\testDBFirst\laptop_management\DAL\obj\Debug\DAL.dll
 D:\testDBFirst\laptop_management\DAL\obj\Debug\DAL.pdb
+D:\project-win-laptop\laptop_management\DAL\bin\Debug\DAL.dll.config
+D:\project-win-laptop\laptop_management\DAL\bin\Debug\DAL.dll
+D:\project-win-laptop\laptop_management\DAL\bin\Debug\DAL.pdb
+D:\project-win-laptop\laptop_management\DAL\bin\Debug\EntityFramework.dll
+D:\project-win-laptop\laptop_management\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\project-win-laptop\laptop_management\DAL\bin\Debug\EntityFramework.xml
+D:\project-win-laptop\laptop_management\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\project-win-laptop\laptop_management\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\project-win-laptop\laptop_management\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\project-win-laptop\laptop_management\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\project-win-laptop\laptop_management\DAL\obj\Debug\DAL.dll
+D:\project-win-laptop\laptop_management\DAL\obj\Debug\DAL.pdb

@@ -10,7 +10,8 @@ namespace DAL.Entity
     public class NhanVien
     {
         [Required(ErrorMessage = "Vai trò không được để trống")]
-        [MaxLength(30, ErrorMessage = "Vai trò không dài quá 30 kí tự")]
+        [StringLength(30, ErrorMessage = "Vai trò không dài quá 30 kí tự")]
+
         public string Role { get; set; }
 
         [Key]
@@ -26,7 +27,7 @@ namespace DAL.Entity
         [RegularExpression(@"^[0-9]{9}$", ErrorMessage = "CCCD phải có 9 chữ số")]
         public string CCCD { get; set; }
 
-        public virtual taiKhoan taiKhoan { get; set; }
+        public virtual taiKhoan taiKhoans { get; set; }
         public virtual ICollection<HoaDon> hoaDons { get; set; }
     }
 }

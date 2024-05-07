@@ -16,5 +16,21 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string PassWord = txtPassword.Text;
+            string UserName = txtUserName.Text;
+            if (UserName == null || UserName.Equals(""))
+            {
+                MessageBox.Show("Chưa nhập Username");
+                return;
+            }
+            if (PassWord == null || PassWord.Equals(""))
+            {
+                MessageBox.Show("Chưa nhập Password");
+                return;
+            }
+        }
     }
 }

@@ -1,0 +1,15 @@
+D:\project-win-laptop\laptop_management\Service\bin\Debug\Service.dll.config
+D:\project-win-laptop\laptop_management\Service\bin\Debug\Service.dll
+D:\project-win-laptop\laptop_management\Service\bin\Debug\Service.pdb
+D:\project-win-laptop\laptop_management\Service\bin\Debug\DAL.dll
+D:\project-win-laptop\laptop_management\Service\bin\Debug\EntityFramework.dll
+D:\project-win-laptop\laptop_management\Service\bin\Debug\EntityFramework.SqlServer.dll
+D:\project-win-laptop\laptop_management\Service\bin\Debug\DAL.pdb
+D:\project-win-laptop\laptop_management\Service\bin\Debug\DAL.dll.config
+D:\project-win-laptop\laptop_management\Service\bin\Debug\EntityFramework.xml
+D:\project-win-laptop\laptop_management\Service\bin\Debug\EntityFramework.SqlServer.xml
+D:\project-win-laptop\laptop_management\Service\obj\Debug\Service.csproj.AssemblyReference.cache
+D:\project-win-laptop\laptop_management\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+D:\project-win-laptop\laptop_management\Service\obj\Debug\Service.csproj.CopyComplete
+D:\project-win-laptop\laptop_management\Service\obj\Debug\Service.dll
+D:\project-win-laptop\laptop_management\Service\obj\Debug\Service.pdb

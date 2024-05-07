@@ -26,11 +26,12 @@ namespace DAL
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            // Tạo mối quan hệ 1-1 tài khoản và nhân viên
-            modelBuilder.Entity<taiKhoan>()
-                        .HasOptional(p => p.nhanvien)
-                        .WithRequired(c => c.taiKhoan)
-                        .WillCascadeOnDelete(true); // Delete cascade
+            // Mối quan hệ một-nhiều: NhanVien - TaiKhoan
+            //modelBuilder.Entity<taiKhoan>()
+            //    .HasOptional(tk => tk.nhanvien)
+            //    .WithMany(nv => nv.taiKhoans)
+            //    .HasForeignKey(tk => tk.MaNV)
+            //    .WillCascadeOnDelete(false);
 
             // Tạo mối quan hệ 1-n nhân viên hóa đơn
             modelBuilder.Entity<HoaDon>()
