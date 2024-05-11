@@ -41,7 +41,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtUserName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtRole = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCCCD = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,11 +48,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtID = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnReload = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvEmployee = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.cmbRole = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -87,6 +88,7 @@
             this.btnUpdate.Size = new System.Drawing.Size(106, 40);
             this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "SỬA";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -103,6 +105,7 @@
             this.btnDelete.Size = new System.Drawing.Size(106, 40);
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "XÓA";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -119,16 +122,17 @@
             this.btnAdd.Size = new System.Drawing.Size(106, 40);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "THÊM";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.cmbRole);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.txtPassWord);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.txtUserName);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.txtRole);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.txtCCCD);
             this.panel3.Controls.Add(this.label3);
@@ -214,27 +218,6 @@
             this.label5.Size = new System.Drawing.Size(81, 20);
             this.label5.TabIndex = 14;
             this.label5.Text = "Chức Vụ:";
-            // 
-            // txtRole
-            // 
-            this.txtRole.BorderRadius = 15;
-            this.txtRole.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRole.DefaultText = "";
-            this.txtRole.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtRole.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtRole.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRole.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRole.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtRole.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRole.Location = new System.Drawing.Point(182, 241);
-            this.txtRole.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtRole.Name = "txtRole";
-            this.txtRole.PasswordChar = '\0';
-            this.txtRole.PlaceholderText = "";
-            this.txtRole.SelectedText = "";
-            this.txtRole.Size = new System.Drawing.Size(209, 31);
-            this.txtRole.TabIndex = 13;
             // 
             // label4
             // 
@@ -335,6 +318,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnReload);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.txtSearch);
@@ -342,6 +326,23 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(714, 84);
             this.panel2.TabIndex = 9;
+            // 
+            // btnReload
+            // 
+            this.btnReload.BorderRadius = 15;
+            this.btnReload.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReload.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReload.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReload.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReload.FillColor = System.Drawing.Color.MediumTurquoise;
+            this.btnReload.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReload.ForeColor = System.Drawing.Color.White;
+            this.btnReload.Location = new System.Drawing.Point(569, 31);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(106, 40);
+            this.btnReload.TabIndex = 5;
+            this.btnReload.Text = "RELOAD";
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // label2
             // 
@@ -369,6 +370,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(73, 30);
             this.btnSearch.TabIndex = 5;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -453,6 +455,23 @@
             this.dgvEmployee.ThemeStyle.RowsStyle.Height = 24;
             this.dgvEmployee.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvEmployee.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_CellClick);
+            // 
+            // cmbRole
+            // 
+            this.cmbRole.BackColor = System.Drawing.Color.Transparent;
+            this.cmbRole.BorderRadius = 15;
+            this.cmbRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRole.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbRole.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbRole.ItemHeight = 30;
+            this.cmbRole.Location = new System.Drawing.Point(181, 240);
+            this.cmbRole.Name = "cmbRole";
+            this.cmbRole.Size = new System.Drawing.Size(209, 36);
+            this.cmbRole.TabIndex = 19;
             // 
             // Employeefrm
             // 
@@ -486,7 +505,6 @@
         private Guna.UI2.WinForms.Guna2Button btnAdd;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2TextBox txtRole;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2TextBox txtCCCD;
         private System.Windows.Forms.Label label3;
@@ -503,5 +521,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtPassWord;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2TextBox txtUserName;
+        private Guna.UI2.WinForms.Guna2Button btnReload;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbRole;
     }
 }

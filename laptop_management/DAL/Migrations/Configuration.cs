@@ -11,18 +11,17 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = true; //tự động chỉnh sữa lại dữ liệu khi có thay đổi
             AutomaticMigrationDataLossAllowed = true;
         }
 
+        /// <summary>
+        /// khởi tạo dữ liệu ban đầu, chỉ nạp vào 1 lần khi khởi tạo database
+        /// </summary>
+        /// <param name="context"></param>
         protected override void Seed(DAL.ManagementContext context)
         {
-            //  Check if the database has already been seeded
-            //if (context.HoaDons.Any() || context.khachHangs.Any() || context.linhKiens.Any()
-            //    || context.loaiLinhKiens.Any() || context.nhanViens.Any() || context.taiKhoans.Any())
-            //{
-            //    return; // Database has been seeded
-            //}
+            
 
             // Seed NhanViens
             context.nhanViens.AddOrUpdate(
@@ -45,10 +44,10 @@
 
             //// Seed KhachHangs
             context.khachHangs.AddOrUpdate(
-                new KhachHang { MaKH = "KH000001", TenKH = "Phan Văn Thuận", SoDT = "12345678" },
-                new KhachHang { MaKH = "KH000002", TenKH = "Lê Chí Nghĩa", SoDT = "87654321" },
-                new KhachHang { MaKH = "KH000003", TenKH = "Lê Quốc Nam", SoDT = "11111111" },
-                new KhachHang { MaKH = "KH000004", TenKH = "Nguyễn An Thành Phát", SoDT = "22222222" }
+                new KhachHang { MaKH = "KH000001", TenKH = "Phan Văn Thuận", SoDT = "1234567812" },
+                new KhachHang { MaKH = "KH000002", TenKH = "Lê Chí Nghĩa", SoDT = "8765432112" },
+                new KhachHang { MaKH = "KH000003", TenKH = "Lê Quốc Nam", SoDT = "1111111112" },
+                new KhachHang { MaKH = "KH000004", TenKH = "Nguyễn An Thành Phát", SoDT = "2222222212" }
             );
 
 

@@ -6,6 +6,13 @@ namespace DAL.Entity
 {
     public class HoaDon
     {
+        public static int stt = 4;
+        public HoaDon() 
+        {
+            ChiTietHDs = new HashSet<ChiTietHD>();
+        } 
+
+
         [Key]
         [Required(ErrorMessage = "Mã hóa đơn không được để trống")]
         [StringLength(8, MinimumLength = 8)]

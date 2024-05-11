@@ -9,6 +9,10 @@ namespace DAL.Entity
 {
     public class NhanVien
     {
+        public NhanVien() 
+        {
+            hoaDons = new HashSet<HoaDon>();
+        }
         [Required(ErrorMessage = "Vai trò không được để trống")]
         [StringLength(30, ErrorMessage = "Vai trò không dài quá 30 kí tự")]
 

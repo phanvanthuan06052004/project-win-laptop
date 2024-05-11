@@ -6,6 +6,10 @@ namespace DAL.Entity
 {
     public class KhachHang
     {
+        public KhachHang() 
+        {
+            hoaDons = new HashSet<HoaDon>();
+        }  
         [Key]
         [Required(ErrorMessage = "Mã khách hàng không được để trống")]
         [StringLength(8, MinimumLength = 8)]
@@ -17,7 +21,7 @@ namespace DAL.Entity
 
         [Required(ErrorMessage = "Số điện thoại không được để trống")]
         [RegularExpression(@"^[0-9]*$", ErrorMessage = "Số điện thoại chỉ được chứa các chữ số")]
-        [StringLength(8, MinimumLength = 8)]
+        [StringLength(10, MinimumLength = 10)]
         public string SoDT { get; set; }
 
         // tạo mqh 1-N với bảng khách hàng

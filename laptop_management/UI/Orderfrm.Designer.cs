@@ -42,12 +42,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtCusstomerName = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnReload = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvProduct = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvOrderDetal = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dgvstt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvMaLoaiLK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblTong = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -175,12 +184,48 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnReload);
+            this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Location = new System.Drawing.Point(26, 34);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(603, 75);
             this.panel2.TabIndex = 4;
+            // 
+            // btnReload
+            // 
+            this.btnReload.BorderRadius = 15;
+            this.btnReload.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReload.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReload.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReload.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReload.FillColor = System.Drawing.Color.MediumTurquoise;
+            this.btnReload.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReload.ForeColor = System.Drawing.Color.White;
+            this.btnReload.Location = new System.Drawing.Point(487, 20);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(106, 40);
+            this.btnReload.TabIndex = 7;
+            this.btnReload.Text = "RELOAD";
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = global::UI.Properties.Resources.loupe;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSearch.FillColor = System.Drawing.Color.Transparent;
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(408, 26);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(73, 30);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label1
             // 
@@ -236,7 +281,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvProduct.ColumnHeadersHeight = 4;
+            this.dgvProduct.ColumnHeadersHeight = 30;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
@@ -250,6 +295,7 @@
             this.dgvProduct.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvProduct.Location = new System.Drawing.Point(0, 0);
             this.dgvProduct.Name = "dgvProduct";
+            this.dgvProduct.ReadOnly = true;
             this.dgvProduct.RowHeadersVisible = false;
             this.dgvProduct.RowHeadersWidth = 51;
             this.dgvProduct.RowTemplate.Height = 24;
@@ -267,8 +313,8 @@
             this.dgvProduct.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvProduct.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvProduct.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvProduct.ThemeStyle.HeaderStyle.Height = 4;
-            this.dgvProduct.ThemeStyle.ReadOnly = false;
+            this.dgvProduct.ThemeStyle.HeaderStyle.Height = 30;
+            this.dgvProduct.ThemeStyle.ReadOnly = true;
             this.dgvProduct.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvProduct.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvProduct.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -276,6 +322,7 @@
             this.dgvProduct.ThemeStyle.RowsStyle.Height = 24;
             this.dgvProduct.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvProduct.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellClick);
             // 
             // panel4
             // 
@@ -298,8 +345,16 @@
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvOrderDetal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvOrderDetal.ColumnHeadersHeight = 4;
+            this.dgvOrderDetal.ColumnHeadersHeight = 30;
             this.dgvOrderDetal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvOrderDetal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvstt,
+            this.dgvID,
+            this.dgvName,
+            this.dgvMaLoaiLK,
+            this.dgvSl,
+            this.dgvGia,
+            this.dgvThanhTien});
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -312,6 +367,7 @@
             this.dgvOrderDetal.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOrderDetal.Location = new System.Drawing.Point(0, 0);
             this.dgvOrderDetal.Name = "dgvOrderDetal";
+            this.dgvOrderDetal.ReadOnly = true;
             this.dgvOrderDetal.RowHeadersVisible = false;
             this.dgvOrderDetal.RowHeadersWidth = 51;
             this.dgvOrderDetal.RowTemplate.Height = 24;
@@ -329,8 +385,8 @@
             this.dgvOrderDetal.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvOrderDetal.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvOrderDetal.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvOrderDetal.ThemeStyle.HeaderStyle.Height = 4;
-            this.dgvOrderDetal.ThemeStyle.ReadOnly = false;
+            this.dgvOrderDetal.ThemeStyle.HeaderStyle.Height = 30;
+            this.dgvOrderDetal.ThemeStyle.ReadOnly = true;
             this.dgvOrderDetal.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvOrderDetal.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvOrderDetal.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -338,6 +394,57 @@
             this.dgvOrderDetal.ThemeStyle.RowsStyle.Height = 24;
             this.dgvOrderDetal.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOrderDetal.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // dgvstt
+            // 
+            this.dgvstt.HeaderText = "STT";
+            this.dgvstt.MinimumWidth = 6;
+            this.dgvstt.Name = "dgvstt";
+            this.dgvstt.ReadOnly = true;
+            // 
+            // dgvID
+            // 
+            this.dgvID.HeaderText = "ID";
+            this.dgvID.MinimumWidth = 6;
+            this.dgvID.Name = "dgvID";
+            this.dgvID.ReadOnly = true;
+            this.dgvID.Visible = false;
+            // 
+            // dgvName
+            // 
+            this.dgvName.HeaderText = "Tên ";
+            this.dgvName.MinimumWidth = 6;
+            this.dgvName.Name = "dgvName";
+            this.dgvName.ReadOnly = true;
+            // 
+            // dgvMaLoaiLK
+            // 
+            this.dgvMaLoaiLK.HeaderText = "Ma Loai";
+            this.dgvMaLoaiLK.MinimumWidth = 6;
+            this.dgvMaLoaiLK.Name = "dgvMaLoaiLK";
+            this.dgvMaLoaiLK.ReadOnly = true;
+            this.dgvMaLoaiLK.Visible = false;
+            // 
+            // dgvSl
+            // 
+            this.dgvSl.HeaderText = "Số lượng";
+            this.dgvSl.MinimumWidth = 6;
+            this.dgvSl.Name = "dgvSl";
+            this.dgvSl.ReadOnly = true;
+            // 
+            // dgvGia
+            // 
+            this.dgvGia.HeaderText = "Giá";
+            this.dgvGia.MinimumWidth = 6;
+            this.dgvGia.Name = "dgvGia";
+            this.dgvGia.ReadOnly = true;
+            // 
+            // dgvThanhTien
+            // 
+            this.dgvThanhTien.HeaderText = "Thành Tiền";
+            this.dgvThanhTien.MinimumWidth = 6;
+            this.dgvThanhTien.Name = "dgvThanhTien";
+            this.dgvThanhTien.ReadOnly = true;
             // 
             // panel5
             // 
@@ -387,6 +494,7 @@
             this.btnCancel.Size = new System.Drawing.Size(142, 48);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "HỦY";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnPay
             // 
@@ -403,6 +511,7 @@
             this.btnPay.Size = new System.Drawing.Size(142, 48);
             this.btnPay.TabIndex = 4;
             this.btnPay.Text = "THANH TOÁN";
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // OrderFrm
             // 
@@ -417,6 +526,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "OrderFrm";
             this.Text = "OrderFrm";
+            this.Load += new System.EventHandler(this.OrderFrm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -451,5 +561,14 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button btnCancel;
         private Guna.UI2.WinForms.Guna2Button btnPay;
+        private Guna.UI2.WinForms.Guna2Button btnSearch;
+        private Guna.UI2.WinForms.Guna2Button btnReload;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvstt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvMaLoaiLK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvSl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvThanhTien;
     }
 }

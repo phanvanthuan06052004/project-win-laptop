@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -24,15 +25,9 @@ namespace DAL
         public DbSet<NhanVien> nhanViens { get; set; }
         public DbSet<taiKhoan> taiKhoans { get; set; }
 
+        //sử dụng Fluent API trong code first
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            // Mối quan hệ một-nhiều: NhanVien - TaiKhoan
-            //modelBuilder.Entity<taiKhoan>()
-            //    .HasOptional(tk => tk.nhanvien)
-            //    .WithMany(nv => nv.taiKhoans)
-            //    .HasForeignKey(tk => tk.MaNV)
-            //    .WillCascadeOnDelete(false);
-
             // Tạo mối quan hệ 1-n nhân viên hóa đơn
             modelBuilder.Entity<HoaDon>()
                 .HasRequired<NhanVien>(e => e.NhanVien)

@@ -5,6 +5,11 @@ namespace DAL.Entity
 {
     public class LinhKien
     {
+        public LinhKien() 
+        {
+            ChiTietHDs = new HashSet<ChiTietHD>();
+        }
+
         [Key]
         [Required(ErrorMessage = "Mã linh kiện không được để trống")]
         public string MaLK { get; set; }

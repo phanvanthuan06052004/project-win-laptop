@@ -1,4 +1,5 @@
-﻿using Service;
+﻿using DAL.Entity;
+using Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace UI
     public partial class LoginFrm : Form
     {
         LoginService loginService;
+        EmployeeService employeeService;
         public LoginFrm()
         {
             InitializeComponent();
@@ -21,8 +23,6 @@ namespace UI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           // try
-            //{
                 string PassWord = txtPassword.Text;
                 string UserName = txtUserName.Text;
                 if (string.IsNullOrEmpty(UserName))
@@ -41,7 +41,13 @@ namespace UI
 
                 if (ktr)
                 {
+                    employeeService = new EmployeeService();
+                    NhanVien nv = employeeService.TimNhanVien(UserName);
+                    loginService = new LoginService();
                     ComputerComponentsManagementfrm mainfrm = new ComputerComponentsManagementfrm();
+                    mainfrm.nv = nv;
+                    string tmp = loginService.GetRole(UserName);
+                    mainfrm.role = tmp;
                     this.Hide();
                     mainfrm.Show();
                 }
@@ -51,12 +57,6 @@ namespace UI
                     txtPassword.Text = ""; // Xóa trường mật khẩu
                     txtUserName.Text = ""; // Xóa trường tên đăng nhập
                 }
-            //}
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //    //MessageBox.Show("Tải dữ liệu không thành công!!!", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
         }
 
     }

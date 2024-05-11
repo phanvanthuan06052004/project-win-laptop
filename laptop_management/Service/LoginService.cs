@@ -1,10 +1,12 @@
 ﻿using DAL;
+using DAL.Entity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Service
 {
@@ -31,5 +33,23 @@ namespace Service
                     return false;
             }
         }
+        /// <summary>
+        /// lây role theo username
+        /// </summary>
+        /// <returns></returns>
+        public string GetRole(string username)
+        {
+            using (var context = new ManagementContext())
+            {
+                var query = (from nv in context.nhanViens
+                             join tk in context.taiKhoans on nv.MaNV equals tk.NhanVienId into nvTk
+                             from tk in nvTk.DefaultIfEmpty()
+                             where tk != null && tk.Username.Contains(username)
+                             select nv.Role).FirstOrDefault();
+
+                return query;
+            }
+        }
+
     }
 }

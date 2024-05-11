@@ -23,6 +23,7 @@ namespace DAL
         [MaxLength(30, ErrorMessage ="Mật khẩu không dài quá 30 kí tự")]
         [Required(ErrorMessage = "Mật khẩu không được để trống")]
         public string Password { get; set; }
+
         public virtual NhanVien nhanvien { get; set; }
     }
 }

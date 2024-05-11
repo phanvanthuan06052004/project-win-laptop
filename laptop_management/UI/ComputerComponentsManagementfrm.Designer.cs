@@ -33,18 +33,19 @@ namespace UI
         {
             this.lblHeader = new System.Windows.Forms.Label();
             this.pnlOptions = new System.Windows.Forms.Panel();
+            this.btnOrderdetail = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnComponent = new System.Windows.Forms.Button();
             this.btnEmployee = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
             this.pnlHeader = new System.Windows.Forms.Panel();
-            this.pnManage = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.pnManage = new System.Windows.Forms.Panel();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.pnlOptions.SuspendLayout();
-            this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -62,7 +63,8 @@ namespace UI
             // pnlOptions
             // 
             this.pnlOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnlOptions.Controls.Add(this.button1);
+            this.pnlOptions.Controls.Add(this.btnLogOut);
+            this.pnlOptions.Controls.Add(this.btnOrderdetail);
             this.pnlOptions.Controls.Add(this.pictureBox1);
             this.pnlOptions.Controls.Add(this.btnComponent);
             this.pnlOptions.Controls.Add(this.btnEmployee);
@@ -77,13 +79,38 @@ namespace UI
             this.pnlOptions.Size = new System.Drawing.Size(246, 680);
             this.pnlOptions.TabIndex = 1;
             // 
+            // btnOrderdetail
+            // 
+            this.btnOrderdetail.BackColor = System.Drawing.Color.DimGray;
+            this.btnOrderdetail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrderdetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnOrderdetail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnOrderdetail.Location = new System.Drawing.Point(12, 527);
+            this.btnOrderdetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOrderdetail.Name = "btnOrderdetail";
+            this.btnOrderdetail.Size = new System.Drawing.Size(223, 48);
+            this.btnOrderdetail.TabIndex = 6;
+            this.btnOrderdetail.Text = "CHI TIẾT HÓA ĐƠN";
+            this.btnOrderdetail.UseVisualStyleBackColor = false;
+            this.btnOrderdetail.Click += new System.EventHandler(this.btnOrderdetail_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::UI.Properties.Resources.OIG2_lPIHED;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(33, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(178, 127);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnComponent
             // 
             this.btnComponent.BackColor = System.Drawing.Color.DimGray;
             this.btnComponent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComponent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnComponent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnComponent.Location = new System.Drawing.Point(12, 493);
+            this.btnComponent.Location = new System.Drawing.Point(12, 445);
             this.btnComponent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnComponent.Name = "btnComponent";
             this.btnComponent.Size = new System.Drawing.Size(223, 48);
@@ -98,7 +125,7 @@ namespace UI
             this.btnEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnEmployee.Location = new System.Drawing.Point(12, 328);
+            this.btnEmployee.Location = new System.Drawing.Point(12, 285);
             this.btnEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEmployee.Name = "btnEmployee";
             this.btnEmployee.Size = new System.Drawing.Size(223, 48);
@@ -113,7 +140,7 @@ namespace UI
             this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnOrder.Location = new System.Drawing.Point(12, 407);
+            this.btnOrder.Location = new System.Drawing.Point(12, 364);
             this.btnOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(223, 48);
@@ -128,7 +155,7 @@ namespace UI
             this.btnCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnCustomer.Location = new System.Drawing.Point(12, 238);
+            this.btnCustomer.Location = new System.Drawing.Point(12, 201);
             this.btnCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(223, 48);
@@ -149,42 +176,6 @@ namespace UI
             this.pnlHeader.Size = new System.Drawing.Size(1250, 59);
             this.pnlHeader.TabIndex = 2;
             // 
-            // pnManage
-            // 
-            this.pnManage.BackColor = System.Drawing.Color.Transparent;
-            this.pnManage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnManage.ForeColor = System.Drawing.Color.Transparent;
-            this.pnManage.Location = new System.Drawing.Point(246, 59);
-            this.pnManage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnManage.Name = "pnManage";
-            this.pnManage.Size = new System.Drawing.Size(1250, 621);
-            this.pnManage.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button1.Location = new System.Drawing.Point(12, 575);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(223, 48);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "CHI TIẾT HÓA ĐƠN";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::UI.Properties.Resources.OIG2_lPIHED;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(33, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(178, 127);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
             // guna2ControlBox1
             // 
             this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -195,6 +186,34 @@ namespace UI
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 0;
+            // 
+            // pnManage
+            // 
+            this.pnManage.BackColor = System.Drawing.Color.Transparent;
+            this.pnManage.BackgroundImage = global::UI.Properties.Resources.Untitled_design;
+            this.pnManage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnManage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnManage.ForeColor = System.Drawing.Color.Transparent;
+            this.pnManage.Location = new System.Drawing.Point(246, 59);
+            this.pnManage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnManage.Name = "pnManage";
+            this.pnManage.Size = new System.Drawing.Size(1250, 621);
+            this.pnManage.TabIndex = 3;
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.Color.DimGray;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnLogOut.Location = new System.Drawing.Point(12, 606);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(223, 48);
+            this.btnLogOut.TabIndex = 7;
+            this.btnLogOut.Text = "LOGOUT";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // ComputerComponentsManagementfrm
             // 
@@ -214,9 +233,9 @@ namespace UI
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Computer Componets Management";
             this.pnlOptions.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -233,7 +252,8 @@ namespace UI
         private Panel pnlOptions;
         private Panel pnManage;
         private PictureBox pictureBox1;
-        private Button button1;
+        private Button btnOrderdetail;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Button btnLogOut;
     }
 }
